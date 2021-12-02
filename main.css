@@ -1,97 +1,151 @@
 body {
-    margin: 0;
-    font-family: 'Karla', sans-serif;
+  margin: 0;
+  font-family: "Karla", sans-serif;
 }
 
 /*TOPNAV*/
 .nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-content: space-around;
-    flex-wrap: nowrap;
-    justify-content: center;
-    font-size: 1.4rem
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: space-around;
+  flex-wrap: nowrap;
+  justify-content: center;
+  font-size: 1.4rem;
 }
- a {
+a {
   text-decoration: none;
   color: #191919;
   margin: 50px;
 }
- a:hover {
-    text-decoration: underline;
-    text-underline-offset: 10px;
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 10px;
 }
-form{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    align-content: space-between;
+form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: space-between;
 }
-input{
-    margin: 5px;
-    width: 300px;
-    height: 30px;
-    border-radius: 5px;
-    text-align: center;
-    border: 1.5px;
+input {
+  margin: 5px;
+  width: 300px;
+  height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  border: 1.5px;
 }
-button{
-    margin: 5px;
-    border-radius: 15px;
-    height: 30px;
+button {
+  margin: 5px;
+  border-radius: 15px;
+  height: 30px;
 }
 /*SISÄLTÖ*/
+/*
 .flex-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-content: space-around;
-    align-items: center;
-  }
-  .flex-items{
-      padding: 50px;
-  }
-  img{
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-  }
-  .flex-items:nth-child(1) {
-    order: 0;
-    flex: 200 300 auto;
-    align-self: auto;
-    background: rgb(252,236,201);
-    background: linear-gradient(90deg, rgba(252,236,201,1) 0%, rgba(238,229,233,1) 100%);
-    height: 800px;
-  }
-  
-  .flex-items:nth-child(2) {
-    order: 0;
-    flex: 100 300 auto;
-    align-self: auto;
-    
-    background: rgb(238,229,233);
-background: linear-gradient(90deg, rgba(238,229,233,1) 0%, rgba(252,236,201,1) 100%);
-    height: 800px;
-  }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: space-around;
+  align-items: center;
+}
+.flex-items {
+  padding: 50px;
+} /*
+img {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+.flex-items:nth-child(1) {
+  order: 0;
+  flex: 200 300 auto;
+  align-self: auto;
+  background: rgb(252, 236, 201);
+  background: linear-gradient(
+    90deg,
+    rgba(252, 236, 201, 1) 0%,
+    rgba(238, 229, 233, 1) 100%
+  );
+  height: 800px;
+}
+
+.flex-items:nth-child(2) {
+  order: 0;
+  flex: 100 300 auto;
+  align-self: auto;
+
+  background: rgb(238, 229, 233);
+  background: linear-gradient(
+    90deg,
+    rgba(238, 229, 233, 1) 0%,
+    rgba(252, 236, 201, 1) 100%
+  );
+  height: 800px;
+}
 hr {
-    width: 80%;
-    
+  width: 80%;
+} */
+
+/*FOOTER*/
+.foot {
+  position: fixed;
+  left: 0;
+  bottom: 20px;
+  width: 100%;
+  color: #191919;
+  text-align: center;
 }
-  /*FOOTER*/
-  .foot{
-    position: fixed;
-   left: 0;
-   bottom: 20px;
-   width: 100%;
-   color: #191919;
-   text-align: center;
+.foot a {
+  color: #191919;
+  text-decoration: none;
 }
-.foot a{
-    color: #191919;
-    text-decoration: none;
+
+/*FORM*/
+
+input {
+  padding: 0.2em;
+  box-sizing: border-box;
+  height: 50px;
+}
+.forms {
+  display: flex;
+  flex: 1;
+}
+
+.light-border {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 1em;
+  box-sizing: border-box;
+}
+.form-wrapper {
+  width: 33%;
+}
+
+/*TUOTTEET*/
+
+.col-4 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+img {
+  width: 25%;
+}
+
+.title {
+  text-align: center;
+  margin: 0 auto 80px;
+  position: relative;
+  line-height: 60px;
+  color: #555;
 }
