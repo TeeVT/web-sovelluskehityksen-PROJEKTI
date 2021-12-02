@@ -13,12 +13,22 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-<div class="nav">
-    <a href="index.html">Etusivu</a>
-    <a href="myynti.html">Myynti</a>
-    <a href="#" class="fas fa-user"></a>
-    <p></p>
-</div>
+    <div class="nav">
+        <a href="index.html">Etusivu</a>
+        <a href="myynti.html">Myynti</a>
+        <button id="myBtn"><i class="fas fa-user"></i></button>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close"><i class="fas fa-times"></i></span>
+          <form action="#">
+                    <input  type="text" name="email" placeholder="Sähköposti" required>
+                    <input  type="password" name="passwd" placeholder="Salasana" required>
+                    <button id="logBtn" type="submit">Kirjaudu</button>
+        </form>
+        <p>Tai rekisteröidy <a href="rek.html">TÄSTÄ!</a></p>
+        </div>
+      </div>
 <div class="flex-container">
     <div class="flex-items">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -39,14 +49,7 @@
         when an unknown printer took a galley of type and scrambled it to make a type specimen book.
         <br>
         <br>
-        <form>
-            <input  type="text" name="name" placeholder="Etunimi">
-            <input  type="text" name="name" placeholder="Sukunimi">
-                    <input  type="text" name="email" placeholder="Sähköposti">
-                    <input  type="text" name="name" placeholder="Käyttäjänimi">
-                    <input  type="password" name="passwd" placeholder="Password">
-                    <button  type="submit">Rekisteröidy</button>
-        </form>
+        
     </div>
  </div>
 
@@ -58,6 +61,6 @@
     <a href="#">footer</a>
  </div>
  <script src="https://kit.fontawesome.com/52895dbb38.js" crossorigin="anonymous"></script>
-    <script src="navigaatio.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
