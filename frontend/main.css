@@ -1,0 +1,182 @@
+body {
+    margin: 0;
+    font-family: 'Karla', sans-serif;
+    background: rgb(252,236,201);
+    background: linear-gradient(90deg, rgba(252,236,201,1) 0%, rgba(238,229,233,1) 100%);
+}
+form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: space-between;
+    margin: 100px;
+}
+input{
+    margin: 5px;
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1.5px;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: space-between;
+    margin: 60px;
+    
+}
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    }
+
+/*REK MODAL*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  .modal-content {
+    background-color: #fefefe;
+    background: rgb(252,236,201);
+    background: linear-gradient(90deg, rgba(252,236,201,1) 0%, rgba(238,229,233,1) 100%);
+    margin: 15% auto;
+    padding: 50px;
+    border: 1px solid #888;
+    width: 20%;
+    height:40%;
+    border-radius: 5%;
+    text-align: center;
+    
+  }
+  .modal-content a{
+    text-decoration: none;
+    color: #191919;
+  }
+  .modal-content a:hover{
+    text-decoration: underline;
+      text-underline-offset: 10px;
+  }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+  }
+  #myBtn{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  .light-border {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 1em;
+  }
+
+  /*FOOTER*/
+  .foot{
+    
+    position: fixed;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+    color: #191919;
+    text-align: center;
+ }
+ .foot a{
+   margin: 20px;
+     color: #191919;
+     text-decoration: none;
+ }
+ img{
+     border-radius: 5px;
+    height: 400px;
+ }
+ .shadow{
+     filter: drop-shadow(8px 8px 10px gray);
+ }
+ hr{
+     width: 80%;
+     color: #191919;
+ }
+ .menu-bar {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 25px;
+}
+
+.item {
+  color: #191919;
+  background-color: transparent;
+  font-size: 1.4rem;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 14px 40px;
+  text-decoration: none;
+}
+
+.item.title {
+  font-weight: 600;
+}
+
+.item:hover {
+  text-decoration: underline;
+    text-underline-offset: 10px;
+}
+
+/*GALLERIA SIVU*/
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  box-sizing: border-box;
+  margin: 10px 10px;
+}
+
+.grid-item {
+  box-sizing: border-box;
+  width: 33.33%;
+  margin-bottom: 20px;
+  padding: 10px 10px;
+}
+
+.grid-content {
+  color: #191919;
+  background-color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 10px;
+}
