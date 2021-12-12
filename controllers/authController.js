@@ -1,7 +1,11 @@
 'use strict';
+const { validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
+const { addUser } = require('../models/userModel');
 const { httpError } = require('../utils/errors');
+const bcrypt = require('bcryptjs');
+const salt = bcrypt.genSaltSync(12);
 
 const login = (req, res, next) => {
   // TODO: add passport authenticate
@@ -24,27 +28,30 @@ const login = (req, res, next) => {
 };
 
 const user_post = async (req, res, next) => {
-  // Extract the validation errors from a request.
-  const errors = validationResult(req); // TODO require validationResult, see userController
-
+  const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    console.log('user create error', errors);
-    res.send(errors.array());
-  } else {
-    // TODO: bcrypt password
+    console.log('user_post validation', errors.array());
+    next(httpError('invalid data', 400));
+    return;
+  }
 
-    const params = [
-      req.body.name,
-      req.body.username,
-      req.body.password, // TODO: save hash instead of the actual password
-    ];
-
-    const result = await addUser(params);
-    if (result.insertId) {
-      res.json({ message: `User added`, user_id: result.insertId });
+  try {
+    console.log('lomakkeesta', req.body);
+    const { name, email, passwd } = req.body;
+    // hash password
+    const hash = bcrypt.hashSync(passwd, salt);
+    const tulos = await addUser(name, email, hash, next);
+    if (tulos.affectedRows > 0) {
+      res.json({
+        message: 'user added',
+        user_id: tulos.insertId,
+      });
     } else {
-      res.status(400).json({error: 'register error'});
+      next(httpError('No user inserted', 400));
     }
+  } catch (e) {
+    console.log('user_post error', e.message);
+    next(httpError('internal server error', 500));
   }
 };
 
