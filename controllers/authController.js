@@ -23,6 +23,38 @@ const login = (req, res, next) => {
   })(req, res, next);
 };
 
+const user_post = async (req, res, next) => {
+  // Extract the validation errors from a request.
+  const errors = validationResult(req); // TODO require validationResult, see userController
+
+  if (!errors.isEmpty()) {
+    console.log('user create error', errors);
+    res.send(errors.array());
+  } else {
+    // TODO: bcrypt password
+
+    const params = [
+      req.body.name,
+      req.body.username,
+      req.body.password, // TODO: save hash instead of the actual password
+    ];
+
+    const result = await addUser(params);
+    if (result.insertId) {
+      res.json({ message: `User added`, user_id: result.insertId });
+    } else {
+      res.status(400).json({error: 'register error'});
+    }
+  }
+};
+
+const logout = (req, res) => {
+  req.logout();
+  res.json({message: 'logout'});
+};
+
 module.exports = {
   login,
+  user_post,
+  logout,
 };

@@ -23,23 +23,26 @@
     </div>
     <form id="login-form" class="light-border" action="http://localhost:3000/auth/login" method="post">
         <h3>Kirjaudu sisään</h3>
-                <input class="light-border" type="text" name="name" placeholder="Sähköposti" required>
-                <input class="light-border" type="password" name="password" placeholder="Salasana" required>
+                <input class="light-border" type="text" name="username" placeholder="Sähköposti">
+                <input class="light-border" type="password" name="password" placeholder="Salasana">
                 <button class="light-border" id="logBtn" type="submit">Kirjaudu</button>
-                <p>Tai rekisteröidy painamalla  <button id="myBtn"><p>TÄSTÄ!</p></button>
+                
     </form>
+    <p>Tai rekisteröidy painamalla  <button id="myBtn"><p>TÄSTÄ!</p></button>
 </div>
+<button class="light-border" style="display: none;" id="log-out">Log out</button>
+
   <div id="myModal" class="modal">
     <div class="modal-content">
       <span class="close"><i class="fas fa-times"></i></span>
       <form action="http://localhost:3000/auth/register" method="post" id="add-user-form">
       <h3>Rekisteröityminen</h3>
-    <input class="light-border" type="text" name="name" placeholder="Etunimi" required>
-    <!-- <input class="light-border" type="text" name="sname" placeholder="Sukunimi" required> -->
-    <input class="light-border" type="text" name="email" placeholder="Sähköposti" required>
-   <!-- <input class="light-border" type="text" name="kname" placeholder="Käyttäjätunnus" required> -->
-    <input class="light-border" type="password" name="passwd" placeholder="Salasana" required>
-    <button class="light-border" id="logBtn" type="submit">Rekisteröidy</button>
+        <input class="light-border" type="text" name="name" placeholder="Etunimi" required>
+        <!-- <input class="light-border" type="text" name="sname" placeholder="Sukunimi" required> -->
+        <input class="light-border" type="text" name="email" placeholder="Sähköposti" required>
+    <!-- <input class="light-border" type="text" name="kname" placeholder="Käyttäjätunnus" required> -->
+        <input class="light-border" type="password" name="passwd" placeholder="Salasana" required>
+        <button class="light-border" id="logBtn" type="submit">Rekisteröidy</button>
 </form>
 </div>
 </div>
@@ -54,5 +57,6 @@
 <script src="https://kit.fontawesome.com/52895dbb38.js" crossorigin="anonymous"></script>
     <script src="/frontend/js/serialize.js"></script>
     <script src="/frontend/js/login.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
