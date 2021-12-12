@@ -14,13 +14,13 @@ form{
 }
 input{
     margin: 5px;
-    width: 300px;
-    height: 30px;
+    width: 250px;
+    height: 20px;
     border-radius: 5px;
     text-align: center;
     border: 1.5px;
 }
-.main{
+.mainlog{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -55,11 +55,11 @@ input{
     background-color: #fefefe;
     background: rgb(252,236,201);
     background: linear-gradient(90deg, rgba(252,236,201,1) 0%, rgba(238,229,233,1) 100%);
-    margin: 15% auto;
-    padding: 50px;
+    margin: 10% auto;
+    padding: 20px;
     border: 1px solid #888;
     width: 20%;
-    height:40%;
+    height:50%;
     border-radius: 5%;
     text-align: center;
     
@@ -102,7 +102,6 @@ input{
 
   /*FOOTER*/
   .foot{
-    
     position: fixed;
     left: 0;
     bottom: 20px;
@@ -115,6 +114,7 @@ input{
      color: #191919;
      text-decoration: none;
  }
+ 
  img{
      border-radius: 5px;
     height: 400px;
@@ -154,6 +154,7 @@ input{
 }
 
 /*GALLERIA SIVU*/
+/*OTA .MAIN CSS JOS MUUTETAAN PÄÄLLEIKKÄIN LAYOUT*/
 .grid {
   display: flex;
   flex-direction: row;
@@ -179,4 +180,17 @@ input{
   box-sizing: border-box;
   height: 100%;
   padding: 10px;
+}
+.hhh{
+  text-align: center;
+}
+
+.frontkuva{
+  margin-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
 }
