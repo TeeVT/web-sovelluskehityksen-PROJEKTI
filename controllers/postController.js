@@ -55,7 +55,7 @@ const post_post = async (req, res, next) => {
 
   try {
     const { username } = req.body;
-    const tulos = await addCat(
+    const tulos = await addPost(
       username,
       req.user.user_id,
       req.file.filename,
@@ -64,7 +64,7 @@ const post_post = async (req, res, next) => {
     if (tulos.affectedRows > 0) {
       res.json({
         message: "post added",
-        cat_id: tulos.insertId,
+        post_id: tulos.insertId,
       });
     } else {
       next(httpError("No post inserted", 400));
