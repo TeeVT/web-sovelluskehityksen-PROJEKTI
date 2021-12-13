@@ -12,7 +12,7 @@ const { httpError } = require("../utils/errors");
 
 const post_list_get = async (req, res, next) => {
   try {
-    const posts = await getAllPost(next);
+    const posts = await getAllPosts(next);
     if (posts.length > 0) {
       res.json(posts);
     } else {

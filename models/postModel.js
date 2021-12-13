@@ -15,7 +15,7 @@ const getAllPosts = async (next) => {
 	User.name as ownername 
 	FROM Post 
 	JOIN User ON 
-	Post.owner = User.user_id`);
+	owner = User.user_id`);
     return rows;
   } catch (e) {
     console.error("getAllPosts error", e.message);
