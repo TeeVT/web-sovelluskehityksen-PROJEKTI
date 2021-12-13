@@ -28,11 +28,11 @@
           <br>
           <h3>Sinulla ei ole lisäyksiä =(</h3>
           </div>
-      <form class="light-border" enctype="multipart/form-data" id="add-item-form">
+      <form class="light-border" enctype="multipart/form-data" id="addPostForm">
         <h3>Lisää teoksia</h3>
-      <input class="light-border" type="text" name="name" placeholder="Otsikko">
-      <input class="light-border" type="text" name="kuvaus" placeholder="Kuvaus"> 
-        <input class="light-border" type="file" name="item" accept="image/*" placeholder="Choose file">
+      <input class="light-border" type="text" name="title" placeholder="Otsikko">
+     <!-- <input class="light-border" type="text" name="kuvaus" placeholder="Kuvaus"> --> 
+        <input class="light-border" type="file" name="post" accept="image/*" placeholder="Choose file">
       <button class="light-border" type="submit">Upload</button>
     </form>
     </div>
@@ -46,5 +46,8 @@
      </div>
      <script src="https://kit.fontawesome.com/52895dbb38.js" crossorigin="anonymous"></script>
         <script src="main.js"></script>
+        <script src="js/addpost.js"></script>
+        <script src="js/check-login.js"></script>
+        <script src="js/serialize.js"></script>
     </body>
     </html>

@@ -11,11 +11,11 @@ const getAllPosts = async (next) => {
 	post_id, 
 	Post.title,
   filename, 
-	Post.user_id,  
-	User.username as ownername 
+	owner,  
+	User.name as ownername 
 	FROM Post 
 	JOIN User ON 
-	title = User.user_id`);
+	Post.owner = User.user_id`);
     return rows;
   } catch (e) {
     console.error("getAllPosts error", e.message);
@@ -29,13 +29,13 @@ const getPost = async (id, next) => {
       `
 	  SELECT 
 	  post_id, 
-	  title,	   
+	  title,
+    owner,	   
 	  filename,
-    Post.user_id,
-	  User.username as ownername 
+	  User.name as ownername 
 	  FROM Post 
 	  JOIN User ON 
-	  Post.user_id = User.user_id
+	  Post.owner = User.user_id
 	  WHERE post_id = ?`,
       [id]
     );
@@ -46,11 +46,11 @@ const getPost = async (id, next) => {
   }
 };
 
-const addPost = async ( title, filename, user_id, next) => {
+const addPost = async ( title, owner, filename, next) => {
   try {
     const [rows] = await promisePool.execute(
-      "INSERT INTO Post (title, filename, user_id,) VALUES (?, ?, ?)",
-      [title, filename, user_id]
+      "INSERT INTO Post (title, owner, filename) VALUES (?, ?, ?)",
+      [title, owner, filename]
     );
     return rows;
   } catch (e) {
@@ -61,18 +61,18 @@ const addPost = async ( title, filename, user_id, next) => {
 
 const modifyPost = async (
   title,
-  user_id,
+  owner,
   post_id,
   role,
   next
 ) => {
   let sql =
-    "UPDATE Post SET title = ? WHERE post_id = ? AND Post.user_id = ?;";
-  let params = [title, post_id, user_id];
+    "UPDATE Post SET title = ? WHERE post_id = ? AND owner = ?;";
+  let params = [title, post_id, owner];
   if (role === 0) {
     sql =
-      "UPDATE Post SET title = ?, user_id = ? WHERE post_id = ?;";
-    params = [title, user_id, post_id];
+      "UPDATE Post SET title = ?, owner = ? WHERE post_id = ?;";
+    params = [title, owner, post_id];
   }
   console.log("sql", sql);
   try {
@@ -84,9 +84,9 @@ const modifyPost = async (
   }
 };
 
-const deletePost = async (id, user_id, role, next) => {
+const deletePost = async (id, owner_id, role, next) => {
   let sql = "DELETE FROM Post WHERE post_id = ? AND user_id = ?";
-  let params = [id, user_id];
+  let params = [id, owner_id];
   if (role === 0) {
     sql = "DELETE FROM Post WHERE post_id = ?";
     params = [id];

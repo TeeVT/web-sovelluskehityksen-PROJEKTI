@@ -54,10 +54,10 @@ const post_post = async (req, res, next) => {
   }
 
   try {
-    const { username } = req.body;
+    const { title } = req.body;
     const tulos = await addPost(
-      username,
-      req.user.user_id,
+      title,      
+      req.user.user_id,      
       req.file.filename,
       next
     );
@@ -83,16 +83,18 @@ const post_put = async (req, res, next) => {
     next(httpError("invalid data", 400));
     return;
   }
-  // pvm VVVV-KK-PP esim 2010-05-28
+
   try {
-    const { username } = req.body;
-    let user_id = req.user.user_id;
+    const { title } = req.body;
+    /*let user_id = req.user.user_id;
     if (req.user.role === 0) {
       user_id = req.body.user_id;
-    }
+    }*/
+
+    const owner = req.user.role === 0 ? req.body.owner : req.user.user_id;
 
     const tulos = await modifyPost(
-      username,
+      title,
       req.params.id,
       req.user.role,
       next

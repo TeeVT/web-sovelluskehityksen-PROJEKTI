@@ -25,7 +25,7 @@ router
   .get(post_list_get)
   .post(
     upload.single('post'),
-    body('username').notEmpty().escape(),
+    body('title').notEmpty().escape(),
     post_post
   );
 
