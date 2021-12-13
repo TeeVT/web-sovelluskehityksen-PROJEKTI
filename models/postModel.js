@@ -85,7 +85,7 @@ const modifyPost = async (
 };
 
 const deletePost = async (id, owner_id, role, next) => {
-  let sql = "DELETE FROM Post WHERE post_id = ? AND user_id = ?";
+  let sql = "DELETE FROM Post WHERE post_id = ? AND owner = ?";
   let params = [id, owner_id];
   if (role === 0) {
     sql = "DELETE FROM Post WHERE post_id = ?";

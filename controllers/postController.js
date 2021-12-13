@@ -9,6 +9,7 @@ const {
   deletePost,
 } = require("../models/postModel");
 const { httpError } = require("../utils/errors");
+const { makeThumbnail } = require('../utils/resize');
 
 const post_list_get = async (req, res, next) => {
   try {
@@ -54,6 +55,11 @@ const post_post = async (req, res, next) => {
   }
 
   try {
+    const thumb = await makeThumbnail(
+      req.file.path,
+      './thumbnails/' + req.file.filename
+    );
+
     const { title } = req.body;
     const tulos = await addPost(
       title,      
@@ -61,14 +67,16 @@ const post_post = async (req, res, next) => {
       req.file.filename,
       next
     );
-    if (tulos.affectedRows > 0) {
-      res.json({
-        message: "post added",
-        post_id: tulos.insertId,
-      });
+    if (thumb) { 
+      if (tulos.affectedRows > 0) {
+        res.json({
+          message: "post added",
+          post_id: tulos.insertId,
+        });
     } else {
       next(httpError("No post inserted", 400));
     }
+  }
   } catch (e) {
     console.log("post_post error", e.message);
     next(httpError("internal server error", 500));

@@ -45,8 +45,8 @@ const createPostCards = (posts) => {
     if (user.role === 0 || user.user_id === post.owner) {
       // link to modify form
       const modButton = document.createElement('a');
-      modButton.innerHTML = 'Modify';
-      modButton.href = `modify-post.html?id=${post.post_id}`;
+      /*modButton.innerHTML = 'Modify';
+      modButton.href = `modify-post.html?id=${post.post_id}`;*/
       modButton.classList.add('button');
 
       // delete selected cat

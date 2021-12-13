@@ -207,3 +207,16 @@ figure {
 .resp {
   width: 100%;
 }
+.hhh {
+  text-align: center;
+}
+
+.frontkuva {
+  margin-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
