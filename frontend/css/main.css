@@ -184,6 +184,7 @@ hr {
   box-sizing: border-box;
   height: 100%;
   padding: 10px;
+  border-radius: 10px;
 }
 
 ul {
@@ -191,11 +192,12 @@ ul {
   padding: 0;
   list-style-type: none;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 li {
-  width: 30%;
+  width: 25%;
   margin: 0.5em;
 }
 
@@ -219,4 +221,14 @@ figure {
   width: 100%;
   max-width: 600px;
   height: auto;
+}
+
+body .grid {
+  justify-content: center;
+}
+
+body .grid .single {
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
 }

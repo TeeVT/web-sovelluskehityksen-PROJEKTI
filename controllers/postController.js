@@ -4,6 +4,7 @@ const { validationResult } = require("express-validator");
 const {
   getAllPosts,
   getPost,
+  getPostTitle,
   addPost,
   modifyPost,
   deletePost,
@@ -14,6 +15,20 @@ const { makeThumbnail } = require('../utils/resize');
 const post_list_get = async (req, res, next) => {
   try {
     const posts = await getAllPosts(next);
+    if (posts.length > 0) {
+      res.json(posts);
+    } else {
+      next("No posts found", 404);
+    }
+  } catch (e) {
+    console.log("post_list_get error", e.message);
+    next(httpError("internal server error", 500));
+  }
+};
+
+const post_haku_get = async (req, res, next) => {
+  try {
+    const posts = await getPostTitle(req.params.hakusana, next);
     if (posts.length > 0) {
       res.json(posts);
     } else {
@@ -145,6 +160,7 @@ const post_delete = async (req, res, next) => {
 
 module.exports = {
   post_list_get,
+  post_haku_get,
   post_get,
   post_post,
   post_put,

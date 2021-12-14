@@ -17,6 +17,7 @@ const {
   post_post,
   post_put,
   post_delete,
+  post_haku_get,
 } = require('../controllers/postController');
 const router = express.Router();
 
@@ -29,6 +30,10 @@ router
     post_post
   );
 
+  router
+  .route('/haku/:hakusana')
+  .get(post_haku_get);
+
 router
   .route('/:id')
   .get(post_get)
@@ -37,5 +42,7 @@ router
     body('username').notEmpty().escape(),
     post_put
   );
+
+
 
 module.exports = router;

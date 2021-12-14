@@ -46,6 +46,17 @@ const getPost = async (id, next) => {
   }
 };
 
+const getPostTitle = async (title) => {
+  try {
+    console.log('postModel getPostTitle', title);
+    const query =  `SELECT post_id, title, filename, Post.owner FROM Post LEFT JOIN User ON name = OWNER WHERE LOWER(title) LIKE LOWER('%${title}%');`;
+    const [rows] = await promisePool.execute(query);
+    return rows;
+  } catch (e) {
+    console.error('PostModel:', e.message);
+  }
+};
+
 const addPost = async ( title, owner, filename, next) => {
   try {
     const [rows] = await promisePool.execute(
@@ -103,6 +114,7 @@ const deletePost = async (id, owner_id, role, next) => {
 module.exports = {
   getAllPosts,
   getPost,
+  getPostTitle,
   addPost,
   modifyPost,
   deletePost,
