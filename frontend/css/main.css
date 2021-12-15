@@ -256,36 +256,36 @@ background-color: #ffffff;
     filter: brightness(40%);
   }
   .example > .block:nth-of-type(1) > .side.-main {
-    /*background: rgb(238,229,233);
-background: linear-gradient(90deg, rgba(238,229,233,1) 27%, rgba(26,87,177,1) 95%);*/
+    background: rgb(198,123,95);
+background: linear-gradient(90deg, rgba(198,123,95,0.9037990196078431) 26%, rgba(231,213,24,1) 89%);
     background-position: 4% 50%;
     background-size: auto 130%;
   }
   .example > .block:nth-of-type(1) > .side.-left {
-    /*background: rgb(238,229,233);
-background: linear-gradient(90deg, rgba(238,229,233,1) 27%, rgba(26,87,177,1) 95%);*/
+    background: rgb(198,123,95);
+background: linear-gradient(90deg, rgba(198,123,95,0.9037990196078431) 26%, rgba(231,213,24,1) 89%);
     background-position: 0 50%;
     background-size: auto 130%;
   }
   .example > .block:nth-of-type(2) > .side.-main {
-    /*background: rgb(26,87,177);
-background: linear-gradient(90deg, rgba(26,87,177,1) 10%, rgba(130,26,177,0.9192051820728291) 38%);*/
+    background: rgb(236,97,82);
+background: radial-gradient(circle, rgba(236,97,82,1) 23%, rgba(231,213,24,1) 84%);
     background-position: 50% 0;
   }
   .example > .block:nth-of-type(2) > .side.-left {
-    /*background: rgb(26,87,177);
-background: linear-gradient(90deg, rgba(26,87,177,1) 10%, rgba(130,26,177,0.9192051820728291) 38%);*/
+    background: rgb(236,97,82);
+background: radial-gradient(circle, rgba(236,97,82,1) 23%, rgba(231,213,24,1) 84%);
     background-position: 28.5% 0;
   }
   .example > .block:nth-of-type(3) > .side.-main {
-    /*background: rgb(130,26,177);
-background: linear-gradient(90deg, rgba(130,26,177,1) 23%, rgba(177,26,54,0.9192051820728291) 93%);*/
+    background: rgb(231,213,24);
+background: linear-gradient(90deg, rgba(231,213,24,0.923406862745098) 14%, rgba(24,231,227,1) 87%);
     background-position: 96% 50%;
     background-size: auto 130%;
   }
   .example > .block:nth-of-type(3) > .side.-left {
-    /*background: rgb(130,26,177);
-background: linear-gradient(90deg, rgba(130,26,177,1) 23%, rgba(177,26,54,0.9192051820728291) 93%);*/
+    background: rgb(231,213,24);
+background: linear-gradient(90deg, rgba(231,213,24,0.923406862745098) 14%, rgba(24,231,227,1) 87%);
     background-position: 78% 50%;
     background-size: auto 130%;
   }
