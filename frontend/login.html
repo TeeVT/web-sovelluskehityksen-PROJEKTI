@@ -23,11 +23,12 @@
     </div>
     <form id="login-form" class="light-border" action="http://localhost:3000/auth/login" method="post">
         <h3>Kirjaudu sisään</h3>
-                <input class="light-border" type="text" name="username" placeholder="Sähköposti" required>
-                <input class="light-border" type="password" name="password" placeholder="Salasana" required> 
+                <input class="light-border" type="text" name="username" placeholder="Sähköposti" >
+                <input class="light-border" type="password" name="password" placeholder="Salasana" > 
                 <button class="light-border" id="logBtn" type="submit">Kirjaudu</button>
+                <p>Tai rekisteröidy painamalla  <button id="myBtn"><p>TÄSTÄ!</p></button>
     </form>
-    <p>Tai rekisteröidy painamalla  <button id="myBtn"><p>TÄSTÄ!</p></button>
+   
 </div>
 
 <!-- <button class="light-border" style="display: none;" id="log-out">Log out</button> -->
@@ -41,10 +42,12 @@
         <!-- <input class="light-border" type="text" name="sname" placeholder="Sukunimi" required> -->
         <input class="light-border" type="text" name="email" placeholder="Sähköposti" required>
     <!-- <input class="light-border" type="text" name="kname" placeholder="Käyttäjätunnus" required> -->
+    
         <input class="light-border" type="password" name="passwd" placeholder="Salasana" required>
         <button class="light-border" id="logBtn" type="submit">Rekisteröidy</button>
+        
 </form>
-</div>
+<p>Salasanoissa on oltava vähintään 8 merkkiä, ja niissä on oltava yhdistelmä isoja kirjaimia, pieniä kirjaimia ja numeroita</p>
 </div>
 </div>
 

@@ -12,7 +12,7 @@ form{
     flex-wrap: nowrap;
     align-items: center;
     align-content: space-between;
-    margin: 100px;
+    margin: 20px;
 }
 input{
     margin: 5px;
@@ -58,10 +58,10 @@ input{
     background: rgb(252,236,201);
     background: linear-gradient(90deg, rgba(252,236,201,1) 0%, rgba(238,229,233,1) 100%);
     margin: 15% auto;
-    padding: 50px;
+    padding: 10px;
     border: 1px solid #888;
-    width: 20%;
-    height:40%;
+    width: 30%;
+    height:50%;
     border-radius: 5%;
     text-align: center;
     
@@ -243,7 +243,7 @@ background-color: #ffffff;
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url("front3.jpg");
+    background-image: url("/frontend/images/front3.jpg");
     background-size: auto 100%;
     box-shadow: -1vw 0.5vw 1vw rgba(0, 0, 0, 0.3);
   }
