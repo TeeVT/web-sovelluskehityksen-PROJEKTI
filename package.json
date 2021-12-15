@@ -30,7 +30,8 @@
     "passport": "^0.5.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
-    "sharp": "^0.29.3"
+    "sharp": "^0.29.3",
+    "sweetalert": "^2.1.2"
   },
   "description": "Web project"
 }

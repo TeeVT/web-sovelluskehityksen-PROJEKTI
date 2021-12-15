@@ -10,7 +10,7 @@ router.post(
     '/register',
     body('name').isLength({ min: 3 }).escape(),
     body('email').isEmail(),
-    body('passwd').matches('(?=.*[A-Z]).{8,}'),
+    body('passwd').matches(''),
     user_post
   );
 
