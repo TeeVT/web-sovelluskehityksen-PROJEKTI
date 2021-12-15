@@ -107,3 +107,7 @@ hakulomake.addEventListener('submit', (evt) => {
   getPost('/post/haku/'+ hakusana);
   }
 }); 
+
+document.getElementById("showAll").addEventListener("click", function(){
+  location.reload();
+});
