@@ -23,6 +23,7 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 
 app.use(express.static('./uploads/'));
 app.use('/thumbnails', express.static('thumbnails'));
+app.use(express.static('./frontend/'));
 
 app.use(passport.initialize());
 
